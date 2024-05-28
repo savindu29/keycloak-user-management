@@ -63,8 +63,8 @@ public class UserServiceImpl implements UserService {
             if (!CollectionUtils.isEmpty(representationList)) {
                 UserRepresentation userRepresentation1 = representationList.stream().filter(userRepresentation -> Objects.equals(false, userRepresentation.isEmailVerified())).findFirst().orElse(null);
                 assert userRepresentation1 != null;
-//                log.info("Email was send to user id {} ", userRepresentation1.getId());
-//                emailVerification(userRepresentation1.getId());
+                log.info("Email was send to user id {} ", userRepresentation1.getId());
+                emailVerification(userRepresentation1.getId());
             }
             return userRegistrationRecord;
         } else{
